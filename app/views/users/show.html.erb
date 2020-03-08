@@ -9,17 +9,17 @@
       </h1>
     </section>
   </aside>
+  <div class="col-md-8">
+    <div>
+      <%= link_to 'All my Projects', "#" %> 
+    </div>
+
+    <div>
+      <%= link_to 'All Projects Shared with me', "#" %> 
+    </div>
+
+    <div>
+    <%= link_to 'All my Groups', "#" %>  
+    </div>
+  </div>
 </div>
-
-<p>
-  <strong>Firstname:</strong>
-  <%= @user.firstname %>
-</p>
-
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
