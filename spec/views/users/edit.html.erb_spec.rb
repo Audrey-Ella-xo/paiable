@@ -7,8 +7,8 @@ RSpec.describe 'users/edit', type: :view do
     @user = assign(:user, User.create!(
                             username: 'MyString',
                             firstname: 'MyString',
-                            lastname: '',
-                            password: 'MyString'
+                            lastname: 'Lastname',
+                            password: 'String'
                           ))
   end
 
