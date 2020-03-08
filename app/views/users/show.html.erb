@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<% provide(:title, @user.username) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <span><%= image_tag @user.picture.url if @user.picture? %></span>
+        <%= @user.username %>
+      </h1>
+    </section>
+  </aside>
+</div>
 
 <p>
   <strong>Firstname:</strong>
@@ -13,11 +19,6 @@
 <p>
   <strong>Lastname:</strong>
   <%= @user.lastname %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

@@ -32,13 +32,13 @@ RSpec.describe User, type: :model do
       expect { User.create(firstname: 'Chifumnanya', lastname: 'Peña') }.not_to raise_error
     end
 
-    it "expects username to not be too long" do
-      subject.username = 'a'* 15
+    it 'expects username to not be too long' do
+      subject.username = 'a' * 15
       expect(subject).to_not be_valid
     end
 
-    it "expects password to not be too long" do
-      subject.password = 'a'* 8
+    it 'expects password to not be too long' do
+      subject.password = 'a' * 8
       expect(subject).to_not be_valid
     end
   end
