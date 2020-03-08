@@ -3,8 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Sign up tests', type: :feature do
-  let(:user) { User.create(username: 'Maru', firstname: 'maria', lastname: 'Odiaka', password: 'foobar') }
-
   scenario 'Valid Signup' do
     visit root_path
     click_on 'Sign up now!'
