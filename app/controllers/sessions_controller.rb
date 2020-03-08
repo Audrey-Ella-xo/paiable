@@ -8,11 +8,13 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to user
     else
-      flash.now[:danger] = 'Username not found' # Not quite right!
+      flash.now[:danger] = 'Username not found'
       render 'new'
     end
   end
 
   def destroy
+    log_out
+    redirect_to root_url
   end
 end
