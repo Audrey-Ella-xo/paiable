@@ -4,14 +4,14 @@
 <h1>Projects</h1>
 
 <p>
-  Total Hours spent on projects <%= current_user.projects.sum(:worked_hours)%>
+  Total Hours spent on projects <%= total_int_to_time%>
 </p>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Worked Hours in minutes</th>
+      <th>Worked Hours</th>
       <th>Date Created</th>
       <th colspan="3"></th>
     </tr>
@@ -21,7 +21,13 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
-        <td><%= project.worked_hours %></td>
+        <td><%= 
+          i = project.worked_hours
+          ar = [0,0]
+          ar[0] = i/60
+          ar[1] = i%60
+          int_to_time = "#{ar[0]}:#{ar[1]}"
+         %></td>
         <td><%= project.created_at.to_date %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
