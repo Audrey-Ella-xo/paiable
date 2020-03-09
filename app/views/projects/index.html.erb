@@ -21,13 +21,7 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
-        <td><%= 
-          i = project.worked_hours
-          ar = [0,0]
-          ar[0] = i/60
-          ar[1] = i%60
-          int_to_time = "#{ar[0]}:#{ar[1]}"
-         %></td>
+        <td><%=int_to_time project.worked_hours%></td>
         <td><%= project.created_at.to_date %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

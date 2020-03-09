@@ -1,0 +1,37 @@
+<%= form_with(model: group, local: true) do |form| %>
+  <% if group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <span class="icon">
+      <%= form.file_field :icon, accept: 'image/jpeg,image/gif,image/png' %>
+    </span>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('#group_icon').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>

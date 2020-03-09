@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.build(project_params)
+    @project.author_id = current_user.id
 
     if @project.save
       flash.now[:info] = 'project Created'
@@ -46,6 +47,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :worked_hours, :user_id)
+    params.require(:project).permit(:name, :worked_hours, :author_id)
   end
 end

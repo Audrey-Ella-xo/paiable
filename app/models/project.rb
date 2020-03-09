@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class Project < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :author, class_name: 'User'
+  has_many :groupings
+  has_many :groups, through: :groupings
   validates :name, presence: true
   validates :worked_hours, presence: true
 end

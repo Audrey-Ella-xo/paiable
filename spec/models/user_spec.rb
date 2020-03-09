@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
 
     it 'valid with valid attributes' do
       subject.username = 'Anonimous'
-      subject.firstname = 'Any name'
+      subject.name = 'Any name'
       subject.lastname = 'Any last name'
       subject.password = 'foobar'
       expect(subject).to be_valid
@@ -29,7 +29,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'creates a user' do
-      expect { User.create(firstname: 'Chifumnanya', lastname: 'Peña') }.not_to raise_error
+      expect { User.create(name: 'Chifumnanya', lastname: 'Peña') }.not_to raise_error
     end
 
     it 'expects username to not be too long' do

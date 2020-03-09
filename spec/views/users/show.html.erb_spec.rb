@@ -6,7 +6,7 @@ RSpec.describe 'users/show', type: :view do
   before(:each) do
     @user = assign(:user, User.create!(
                             username: 'Username',
-                            firstname: 'Firstname',
+                            name: 'Name',
                             lastname: 'Lastname',
                             password: 'Passwo'
                           ))
