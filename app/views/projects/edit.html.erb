@@ -1,2 +1,6 @@
-<h1>Projects#edit</h1>
-<p>Find me in app/views/projects/edit.html.erb</p>
+<% provide(:title, "Edit Project") %>
+<h1>Editing Project</h1>
+
+<%= render 'form', project: @project %>
+
+<%= link_to 'Back', current_user %>

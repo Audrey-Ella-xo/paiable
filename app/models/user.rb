@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_many :projects
+  has_many :projects, dependent: :destroy
   mount_uploader :picture, PictureUploader
   validates :username, presence: true, length: { maximum: 12 }, uniqueness: { case_sensitive: false }
   validates :firstname, presence: true

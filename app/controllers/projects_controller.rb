@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[edit update destroy]
   def index
-    @projects = Project.all
+    @projects = current_user.projects
   end
 
   def new
@@ -12,20 +14,32 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.build(project_params)
 
     if @project.save
-      flash[:info] = 'project Created'
+      flash.now[:info] = 'project Created'
       redirect_to projects_path
     else
+      flash.now[:danger] = 'Project creation failed.'
       render 'new'
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
+    if @project.update(project_params)
+      flash[:info] = 'project updated!'
+      redirect_to projects_path
+    else
+      flash.now[:danger] = 'Project update failed.'
+      redirect_to 'edit'
+    end
   end
 
-  private 
+  def destroy
+    @project.destroy
+    flash.now[:info] = 'Project destroyed'
+  end
+
+  private
 
   def set_project
     @project = Project.find(params[:id])
