@@ -3,10 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe ProjectsController, type: :controller do
- 
   describe 'GET #index' do
     it 'returns http success' do
-      get :index, params: { project.nameuser.project}
+      get :index
       expect(response).to have_http_status(:success)
     end
   end
