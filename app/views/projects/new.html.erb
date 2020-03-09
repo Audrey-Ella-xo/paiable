@@ -1,2 +1,6 @@
-<h1>Projects#new</h1>
-<p>Find me in app/views/projects/new.html.erb</p>
+<% provide(:title, "Add new project") %>
+<h1>New project</h1>
+
+<%= render 'form', project: @project %>
+
+<%= link_to 'Back', current_user %>
