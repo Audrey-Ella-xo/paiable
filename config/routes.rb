@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  resources :projects
   resources :users
   root 'static_pages#home'
   get    '/help',    to: 'static_pages#help'
