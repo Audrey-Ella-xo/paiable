@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[show edit update destroy]
   def index
@@ -10,7 +12,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = current_user.groups.build(group_params)
-   
+
     if @group.save
       flash.now[:info] = 'group Created'
       redirect_to groups_path

@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    @group_options = Group.all.map { |g| [g.name, g.id] }
     @project = Project.new
   end
 

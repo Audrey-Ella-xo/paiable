@@ -10,6 +10,7 @@
 <table>
   <thead>
     <tr>
+      <th>Group Icon</th>
       <th>Name</th>
       <th>Worked Hours</th>
       <th>Date Created</th>
@@ -20,6 +21,13 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
+      <%
+=begin %>
+<td><%= image_tag project.groups.icon.url if project.groups.icon? %></td>
+<%
+=end %>
+
+        
         <td><%= project.name %></td>
         <td><%=int_to_time project.worked_hours%></td>
         <td><%= project.created_at.to_date %></td>

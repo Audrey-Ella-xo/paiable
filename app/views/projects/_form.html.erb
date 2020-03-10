@@ -1,10 +1,10 @@
 <%= form_with(model: project, local: true) do |form| %>
-  <% if group.errors.any? %>
+  <% if project.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
       <ul>
-      <% group.errors.full_messages.each do |message| %>
+      <% project.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -22,7 +22,10 @@
     <%= form.text_field :worked_hours %>
   </div>
 
+  <%= form.select(:group_id, @group_options) %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+

@@ -11,15 +11,17 @@
   </aside>
   <div class="col-md-8">
     <div>
-      <%= link_to 'All my Projects', projects_path %> 
+    Projects belonging to <%= @group.name %>
+    <ul>
+      <% @group.projects.each do |project| %>
+        <li><%= link_to project.name, project_path(project) %></li>
+      <% end %>
+    </ul>
     </div>
 
     <div>
-      <%= link_to 'All Projects Shared with me', "#" %> 
+       <%= link_to 'Create new Group', new_group_path %> 
     </div>
 
-    <div>
-    <%= link_to 'All my Groups', groups_path %>  
-    </div>
   </div>
 </div>

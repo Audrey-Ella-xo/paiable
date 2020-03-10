@@ -9,10 +9,10 @@ module ProjectsHelper
     "#{ar[0]}:#{ar[1]}"
   end
 
-  def int_to_time(i)
-      ar = [0,0]
-      ar[0] = i/60
-      ar[1] = i%60
-      int_to_time = "#{ar[0]}:#{ar[1]}"
+  def int_to_time(val)
+    ar = [0, 0]
+    ar[0] = val / 60
+    ar[1] = val % 60
+    "#{ar[0]}:#{ar[1]}"
   end
 end
