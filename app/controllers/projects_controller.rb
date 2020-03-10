@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.build(project_params)
-    @project.groups << Group.find(params[:project][:group_ids])
+    @project.groups << Group.find(params[:project][:group_ids]) if params[:project][:group_ids]
 
     if @project.save
       flash.now[:info] = 'project Created'
@@ -26,6 +26,8 @@ class ProjectsController < ApplicationController
   def edit; end
 
   def update
+    @project.groups << Group.find(params[:project][:group_ids]) if params[:project][:group_ids]
+
     if @project.update(project_params)
       flash[:info] = 'project updated!'
       redirect_to projects_path
