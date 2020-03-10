@@ -22,7 +22,11 @@
     <%= form.text_field :worked_hours %>
   </div>
 
-  <%= form.select(:group_id, @group_options) %>
+  <% Group.all.each do |group| %>
+    <%= check_box_tag "project[group_ids][]", group.id, @project.group_ids.include?(group.id) %>
+    <%= group.name %>
+    <br />
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

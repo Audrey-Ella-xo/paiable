@@ -7,13 +7,12 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @group_options = Group.all.map { |g| [g.name, g.id] }
     @project = Project.new
   end
 
   def create
     @project = current_user.projects.build(project_params)
-    @project.author_id = current_user.id
+    @project.groups << Group.find(params[:project][:group_ids])
 
     if @project.save
       flash.now[:info] = 'project Created'
@@ -48,6 +47,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :worked_hours, :author_id)
+    params.require(:project).permit(:name, :worked_hours, :author_id, group_ids: [])
   end
 end
