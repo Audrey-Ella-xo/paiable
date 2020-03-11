@@ -3,14 +3,9 @@
 
 <h1>Projects</h1>
 
-<p>
-  Total Hours spent on projects <%= total_int_to_time%>
-</p>
-
 <table>
   <thead>
     <tr>
-      <th>Group Icon</th>
       <th>Name</th>
       <th>Worked Hours</th>
       <th>Date Created</th>
@@ -21,17 +16,6 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-      <%
-=begin %>
-<td><%= image_tag project.groups.icon.url if project.groups.icon? %></td>
-<%
-=end %>
-<td>
-<% project.groups.each do |group|  %>
-<%= image_tag group.icon.url if group.icon? %>
-<% end %>
-
-</td>
         <td><%= project.name %></td>
         <td><%=int_to_time project.worked_hours%></td>
         <td><%= project.created_at.to_date %></td>
@@ -44,5 +28,5 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'Back', current_user %>
 
