@@ -6,6 +6,10 @@ class ProjectsController < ApplicationController
     @projects = current_user.projects
   end
 
+  def second_index
+    @projects = current_user.projects
+  end
+
   def new
     @project = Project.new
   end

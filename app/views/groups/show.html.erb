@@ -11,17 +11,27 @@
   </aside>
   <div class="col-md-8">
     <div>
-    Projects belonging to <%= @group.name %>
-    <ul>
+
+    <table>
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Author</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
       <% @group.projects.each do |project| %>
-        <li><%= link_to project.name, project_path(project) %></li>
+        <tr>
+          <td><%= link_to project.name, project_path(project) %></td>
+          <td><%= User.find_by(id: project.author_id).name%></td>
+        </tr>
       <% end %>
-    </ul>
-    </div>
-
-    <div>
-       <%= link_to 'Create new Group', new_group_path %> 
-    </div>
-
+    </tbody>
+  </table>
+  <br>
+  
+  <%= link_to 'Create new Group', new_group_path %>
   </div>
 </div>

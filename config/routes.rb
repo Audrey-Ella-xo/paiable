@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :users
   root 'static_pages#home'
+  get  '/second_index', to: 'projects#second_index'
   get    '/help',    to: 'static_pages#help'
   get    '/about',   to: 'static_pages#about'
   get    '/sign_in', to: 'users#new'
