@@ -6,7 +6,7 @@ class Group < ApplicationRecord
   has_many :projects, -> { distinct }, through: :groupings, dependent: :destroy
   before_save { self.name = name.humanize }
   mount_uploader :icon, PictureUploader
-  validates :name, presence: true, case_sensitive: false 
+  validates :name, presence: true, case_sensitive: false
   validate :icon_size
 
   private

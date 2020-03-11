@@ -4,14 +4,13 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: %i[edit update destroy]
   # before_action :find_unlinked_projects, only: [second_index]
   def index
-    @projects = current_user.projects.joins(:groupings).distinct.order("created_at DESC")
+    @projects = current_user.projects.joins(:groupings).distinct.order('created_at DESC')
   end
 
   def second_index
     # @projects = current_user.projects.includes(:groupings).where(groupings: { group_id: nil }).order("created_at DESC")
 
-    @projects = current_user.projects.order("created_at DESC")
-
+    @projects = current_user.projects.order('created_at DESC')
   end
 
   def new
