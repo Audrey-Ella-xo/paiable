@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
   def second_index
     @projects = current_user.projects.includes(:groupings).where(groupings: { group_id: nil })
   end
-  
+
   def new
     @project = Project.new
   end
