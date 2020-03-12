@@ -1,0 +1,24 @@
+<% provide(:title, "Groups") %>
+<p id="notice"><%= notice %></p>
+
+<% provide(:name, "Groups") %>
+
+<table class="project container">
+  
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td class="icon" ><%= image_tag group.icon.url if group.icon? %></td>
+        <td><%= link_to "#{group.name}", group %></td>
+        <td><%= group.created_at.strftime("%b %d, %Y") %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<div class="bttn">
+<%= button_to 'Create new Group', new_group_path, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Back', current_user, method: :get, class: 'btn btn-primary' %>
+</div>

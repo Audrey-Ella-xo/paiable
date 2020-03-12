@@ -1,25 +1,43 @@
 <% provide(:title, @user.username) %>
 <p id="notice"><%= notice %></p>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <span><%= image_tag @user.picture.url if @user.picture? %></span>
-        <%= @user.username %>
-      </h1>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <div>
-      <%= link_to 'All my Projects', projects_path %> 
-    </div>
+<div class="">
+  <section class="user_info">
+    <h1>
+      <span><%= image_tag @user.picture.url, class: "profile"%></span>
+      <%= @user.name %>
+      <%=  @user.lastname %>
+    </h1>
+  </section>
 
-    <div>
-      <%= link_to 'All Projects Shared with me', "#" %> 
-    </div>
-
-    <div>
-    <%= link_to 'All my Groups', "#" %>  
-    </div>
+  <div class="">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <div>
+          <%= link_to 'All my Projects', projects_path %> 
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div>
+          <%= link_to 'All Projects Shared with me', second_index_path %> 
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div>
+          <%= link_to 'All my Groups', groups_path %>  
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div>
+          <%= link_to 'Project tasks', tasks_path %>  
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div>
+          <%= link_to "Account Settings", edit_user_path(current_user) %>  
+        </div>
+      </li>
+      
+    </ul>    
   </div>
 </div>
+

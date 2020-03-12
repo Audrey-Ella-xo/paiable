@@ -1,0 +1,24 @@
+<% provide(:title, "Tasks") %>
+<p id="notice"><%= notice %></p>
+
+<% provide(:name, "All Tasks") %>
+
+<table class="project container">
+  
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td class="task" ><%= link_to "#{task.name}", task %></td>
+        <td class="task" ><%= task.activity %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<div class="bttn">
+<%= button_to 'Create new Task', new_task_path, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Back', current_user, method: :get, class: 'btn btn-primary' %>
+</div>
+

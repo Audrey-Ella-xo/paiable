@@ -6,7 +6,7 @@ RSpec.describe 'users/new', type: :view do
   before(:each) do
     assign(:user, User.new(
                     username: 'MyString',
-                    firstname: 'MyString',
+                    name: 'MyString',
                     lastname: 'Mystring',
                     password: 'String'
                   ))
@@ -18,7 +18,7 @@ RSpec.describe 'users/new', type: :view do
     assert_select 'form[action=?][method=?]', users_path, 'post' do
       assert_select 'input[name=?]', 'user[username]'
 
-      assert_select 'input[name=?]', 'user[firstname]'
+      assert_select 'input[name=?]', 'user[name]'
 
       assert_select 'input[name=?]', 'user[lastname]'
 

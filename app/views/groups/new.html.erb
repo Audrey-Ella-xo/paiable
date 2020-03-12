@@ -1,0 +1,8 @@
+<% provide(:title, "New Group") %>
+<% provide(:name, "New Group") %>
+
+<%= render 'form', group: @group %>
+
+<div class="bttn">
+<%= button_to 'Back', groups_path, method: :get, class: 'btn btn-primary' %>
+</div>

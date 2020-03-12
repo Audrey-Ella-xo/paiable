@@ -1,0 +1,101 @@
+<% if !logged_in? # if the user is not signed in, render this %>
+    <style>
+        body {
+            background: linear-gradient( /* somewhat transparent film on top of the BG to make it look darker. */
+                rgba(0,0,0, 0.7),
+                rgba(0,0,0, 0.7)
+                ), url("/looking-through-a-lens.jpg") no-repeat center center fixed
+            
+            ; /* only display once, center horizontal and vertical, dont let scroll change position. */
+            -webkit-background-size: cover;
+            -moz-background-size: cover; /* cover the whole html element. */
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .h1 {
+            color: white;
+            font-weight: bold;
+        }
+
+        .h2 {
+            font-size: 1.2em;
+            letter-spacing: -1px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: normal;
+            color: #fff;
+        }
+
+        .container-index {
+            margin-right: 15%;
+            margin-left: 15%;
+        }
+        .text {
+            color: white;
+            font-weight: 300;
+            font-size: 150%;
+        }
+        .footer-links {
+            text-align: center;
+            color: white;
+            margin-top: 23%;
+            font-size: 75%;
+        }
+        
+        .sign-up {
+            float: right;
+            width: 300px;
+            height: 250px;
+            margin-top: 7.5%;
+        }
+        .log-in-form {
+            margin: 5px;
+        }
+
+        .button_to {
+            margin-left: 90px;
+        }
+        .btn-landing {
+            background: #3174BE;
+            color: #fff;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 0;
+        }
+
+        .panel {
+            background: linear-gradient( /* somewhat transparent film on top of the BG to make it look darker. */
+            rgba(0,0,0, 0.3),
+            rgba(0,0,0, 0.7)
+            ), #3174BE;
+        }
+        
+    </style>
+    
+    <div class="container-index row">
+        <div class="col-sm-6">
+            <h1 class="h1">Welcome to Paiable.</h1>
+            <p class="text">
+                Simple project management tool.<br>
+                Add projects and deadlines<br>
+                Assign tasks and activites to projects and link to groups
+            </p>
+        </div>
+        <div class="col-sm-6">                    
+                   <div class="sign-up panel">
+                        <h2 class="h2">Convinced and want to learn more?</h2>
+                        <%= button_to 'Sign up now!', new_user_path, method: :get, class: 'btn btn-landing' %>
+                        
+                        <h2 class="h2">Already a user?</h2>
+                        <%= button_to 'Log in', log_in_path, method: :get, class: 'btn btn-landing' %>
+                   </div> 
+        </div>
+        
+        <div class="col-sm-12">
+            <p class="footer-links"> © 2020 PAIABLE by Audrey_xo</p>
+        </div>
+        
+    </div>
+<% else # if the user IS signed in, render the following %>
+    <script>document.location = current_user </script>
+<% end %>

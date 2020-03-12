@@ -1,6 +1,8 @@
 <% provide(:title, "Add new project") %>
-<h1>New project</h1>
+<% provide(:name, "New Project") %>
 
 <%= render 'form', project: @project %>
 
-<%= link_to 'Back', current_user %>
+<div class="bttn">
+<%= button_to 'Back', current_user, method: :get, class: 'btn btn-primary' %>
+</div>

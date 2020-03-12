@@ -9,7 +9,7 @@ RSpec.describe 'Sign up tests', type: :feature do
     sleep(3)
     expect(page).to have_content('New User')
     fill_in 'Username', with: 'JohnDoe'
-    fill_in 'Firstname', with: 'John'
+    fill_in 'Name', with: 'John'
     fill_in 'Lastname', with: 'Doe'
     fill_in 'Password', with: 'Johnie'
     click_button 'Create User'
@@ -23,7 +23,7 @@ RSpec.describe 'Sign up tests', type: :feature do
     sleep(3)
     expect(page).to have_content('New User')
     fill_in 'Username', with: ''
-    fill_in 'Firstname', with: 'John'
+    fill_in 'Name', with: 'John'
     fill_in 'Lastname', with: 'Doe'
     fill_in 'Password', with: 'Johnie'
     click_button 'Create User'
