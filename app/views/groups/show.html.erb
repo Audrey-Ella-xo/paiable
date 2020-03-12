@@ -28,9 +28,11 @@
   </table>
   <br>
 
+  <div class="bttn">
   <%= button_to 'Edit', edit_group_path(@group), method: :get, class: 'btn btn-primary' %>
   <%= button_to 'Destroy', @group, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
   <%= button_to 'Create new Group', new_group_path, method: :get, class: 'btn btn-primary' %>
   <%= button_to 'Back', groups_path, method: :get, class: 'btn btn-primary' %>
+  </div>
   </div>
 </div>

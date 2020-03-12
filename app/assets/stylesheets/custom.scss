@@ -192,6 +192,8 @@ padding: 15px;
 
 .showcase {
   border-collapse: collapse;
+  max-width: 665px;
+  margin: auto;
   width: 100%;
   td, th {
     border: 1px solid #ddd;
@@ -219,4 +221,13 @@ padding: 15px;
 
 .btn-primary:hover {
   background-color: #5fb523;
+}
+
+.bttn {
+  width: 100%;
+  max-width: 665px;
+  margin: auto;
+  .button_to {
+    display: inline;
+  }
 }
