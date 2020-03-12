@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  # Returns the full title on a per-page basis.
   def full_title(page_title = '')
     base_title = 'Paiable'
     if page_title.empty?
@@ -9,5 +8,9 @@ module ApplicationHelper
     else
       page_title + ' | ' + base_title
     end
+  end
+
+  def namer(page_name = '')
+    page_name unless page_name.empty?
   end
 end

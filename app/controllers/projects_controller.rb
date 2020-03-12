@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
       flash.now[:info] = 'project Created'
       if params[:project][:group_ids]
         redirect_to projects_path
-      else 
+      else
         redirect_to second_index_path
       end
     else
@@ -44,7 +44,7 @@ class ProjectsController < ApplicationController
       flash[:info] = 'project updated!'
       if params[:project][:group_ids]
         redirect_to projects_path
-      else 
+      else
         redirect_to second_index_path
       end
     else

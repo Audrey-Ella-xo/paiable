@@ -1,11 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,700,800&display=swap');
 
 /* universal */
 
 body {
   padding-top: 60px;
-  background-color: antiquewhite;
+  background-color: #F1F3F2;
+  font-family: 'Montserrat', sans-serif;
 }
 
 section {
@@ -35,6 +37,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1;
+    font-family: 'Montserrat', sans-serif;
   }
   
   h1 {
@@ -59,6 +62,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* header */
+header {
+  background-color: #3174BE;
+}
+
 
 #logo {
     float: left;
@@ -75,12 +82,28 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     text-decoration: none;
   }
-  
+
+  .namer {
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: -40px;
+    font-size: 1.3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+
+nav {
+   li {
+	color: #fff;
+}
+}
+   
   /* Forms */
 
   .form-signin, .total, .project {
     width: 100%;
-    max-width: 330px;
+    max-width: 665px;
     padding: 15px;
     margin: auto;
     .checkbox {
@@ -126,3 +149,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
   
+.btn-primary {
+  color: #fff;
+  background-color: #5fb523;
+  border-color: #5fb523;
+}
+
+.btn-primary:hover {
+  background-color: #5fb523;
+}

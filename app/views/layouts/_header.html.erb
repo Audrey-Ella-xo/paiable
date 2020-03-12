@@ -1,6 +1,7 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top">
   <div class="container">
     <%= link_to "PAIABLE", current_user, id: "logo" %>
+    <div class="namer"><%= namer(yield(:name)) %></div>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Help", help_path %></li>
