@@ -6,7 +6,7 @@ class Project < ApplicationRecord
   has_many :groupings
   has_many :groups, -> { distinct }, through: :groupings
   has_many :taskings
-  has_many :tasks, -> { distinct }, through: :taskings
+  has_many :tasks, -> { distinct }, through: :taskings, dependent: :destroy
   validates :name, presence: true
   validates :worked_hours, presence: true
 end
