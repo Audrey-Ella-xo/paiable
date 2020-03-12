@@ -7,6 +7,7 @@ class Group < ApplicationRecord
   before_save { self.name = name.humanize }
   mount_uploader :icon, PictureUploader
   validates :name, presence: true, case_sensitive: false
+  validates :icon, presence: true
   validate :icon_size
 
   private

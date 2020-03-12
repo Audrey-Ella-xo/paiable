@@ -1,0 +1,29 @@
+<% provide(:title, "Tasks") %>
+<p id="notice"><%= notice %></p>
+
+<h1>Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Activity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= link_to "#{task.name}", task %></td>
+        <td><%= task.activity %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'Create new Task', new_task_path %>
+<%= link_to 'Back', current_user %>
+

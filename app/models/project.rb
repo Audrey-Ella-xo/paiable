@@ -5,6 +5,8 @@ class Project < ApplicationRecord
   belongs_to :author, class_name: 'User'
   has_many :groupings
   has_many :groups, -> { distinct }, through: :groupings
+  has_many :taskings
+  has_many :tasks, -> { distinct }, through: :taskings
   validates :name, presence: true
   validates :worked_hours, presence: true
 end

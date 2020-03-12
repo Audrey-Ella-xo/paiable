@@ -23,6 +23,7 @@
         <p class="date"><%= project.created_at.to_date %></p>
         </td>
         <td class="hours"><%=int_to_time project.worked_hours%></td>
+        <td class="links"><%= link_to 'Show', project %></td>
         <td class="links"><%= link_to 'Edit', edit_project_path(project) %></td>
         <td class="links"><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
