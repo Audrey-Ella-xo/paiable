@@ -3,20 +3,13 @@
 
 <% provide(:name, "All Tasks") %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Activity</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+<table class="project container">
+  
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= link_to "#{task.name}", task %></td>
-        <td><%= task.activity %></td>
+        <td class="task" ><%= link_to "#{task.name}", task %></td>
+        <td class="task" ><%= task.activity %></td>
        
       </tr>
     <% end %>
@@ -24,6 +17,6 @@
 </table>
 <br>
 
-<%= link_to 'Create new Task', new_task_path %>
-<%= link_to 'Back', current_user %>
+<%= button_to 'Create new Task', new_task_path, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Back', current_user, method: :get, class: 'btn btn-primary' %>
 

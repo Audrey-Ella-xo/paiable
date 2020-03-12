@@ -4,7 +4,7 @@
 <% provide(:name, "Grouped Projects") %>
 
 <div class="total container">
-  Total Hours spent on projects <%= total_int_to_time%>
+  Total Hours spent on projects <span class="tym"><%= total_int_to_time%></span>
 </div>
 
 <table class="project container">
@@ -19,13 +19,10 @@
         
         </td>
 
-        <td class="pjname"><%= project.name %>
-        <p class="date"><%= project.created_at.to_date %></p>
+        <td class="pjname"><%= link_to "#{project.name}", project %>
+        <p class="date"><%= project.created_at.strftime("%b %d, %Y") %></p>
         </td>
         <td class="hours"><%=int_to_time project.worked_hours%></td>
-        <td class="links"><%= link_to 'Show', project %></td>
-        <td class="links"><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td class="links"><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,7 +30,6 @@
 
 <br>
 
-<%= link_to 'Add new Project', new_project_path %>
-
-<%= link_to 'Back', current_user %>
+<%= button_to 'Add new Project', new_project_path, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Back', current_user, method: :get, class: 'btn btn-primary' %>
 

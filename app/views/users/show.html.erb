@@ -1,14 +1,13 @@
 <% provide(:title, @user.username) %>
 <p id="notice"><%= notice %></p>
 <div class="">
-  <div class="user_info">
-    <div class="profile-image">
-      <span><%= image_tag @user.picture.url if @user.picture? %></span>
-    </div>
-    <%= @user.name %>
-    <%=  @user.lastname %>
-  </div>
-
+  <section class="user_info">
+    <h1>
+      <span><%= image_tag @user.picture.url, class: "profile"%></span>
+      <%= @user.name %>
+      <%=  @user.lastname %>
+    </h1>
+  </section>
 
   <div class="">
     <ul class="list-group">

@@ -56,7 +56,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     flash.now[:info] = 'Project destroyed'
-    redirect_to request.referrer
+    redirect_to projects_path
   end
 
   private

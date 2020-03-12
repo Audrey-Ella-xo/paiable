@@ -3,5 +3,5 @@
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= button_to 'Show', @user, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Back', users_path, method: :get, class: 'btn btn-primary' %>
