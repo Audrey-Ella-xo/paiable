@@ -62,16 +62,17 @@
 
 This project is based on an app for grouping hours spent on different projects. It includes the MVC for users, projects, groups and an added task feature. Also included are Unit and integration tests.
 
-[![Product Name Screen Shot][product-screenshot1]](https://audmaru-stay-in-touch.herokuapp.com/)
-[![Product Name Screen Shot][product-screenshot2]](https://audmaru-stay-in-touch.herokuapp.com/)
-[![Product Name Screen Shot][product-screenshot3]](https://audmaru-stay-in-touch.herokuapp.com/)
+[![Product Name Screen Shot][product-screenshot1]](https://paiable.herokuapp.com/)
+[![Product Name Screen Shot][product-screenshot2]](https://paiable.herokuapp.com/)
+[![Product Name Screen Shot][product-screenshot3]](https://paiable.herokuapp.com/)
 
 
 This is a Microverse capstone project of the Ruby on Rails Curriculum.
 
 ### Live Demo
 
-[Live Demo](https://audmaru-stay-in-touch.herokuapp.com/)
+Please visit the link bellow to view the live demo of the application
+[Live Demo](https://paiable.herokuapp.com/)
 
 ### Gettiing Started
 
@@ -115,7 +116,7 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-The project was deployed in [Heroku](https://audmaru-stay-in-touch.herokuapp.com/) and also we configured the application in Facebook for developers to sign in using Facebook accounts
+The project was deployed in [Heroku](https://paiable.herokuapp.com/) and I use aws s3 bucket to store images in production.
 
 ### Built With
 This project was built using these technologies.
