@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,700,800&display=swap');
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 /* universal */
 
@@ -113,7 +115,7 @@ nav {
    
   /* Forms */
 
-  .form-signin, .total, .project {
+  .form-signin, .total, .project, .list-group {
     width: 100%;
     max-width: 665px;
     padding: 15px;
@@ -224,7 +226,17 @@ padding: 15px;
   color: white;
   }
 }
-  
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    a {
+      margin-left: 10px;
+    } 
+}
 .btn-primary {
   color: #fff;
   background-color: #5fb523;
