@@ -18,7 +18,7 @@ RSpec.describe Group, type: :model do
     end
 
     it 'not valid without an icon' do
-      subject.icon = fixture_file_upload('test/fixtures/rails.png', 'image/png')
+      subject.icon = fixture_file_upload('test/fixtures/chibi.jpeg', 'image/jpg')
       expect(subject).to_not be_valid
     end
 
