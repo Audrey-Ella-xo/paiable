@@ -13,26 +13,31 @@
     <ul class="list-group">
       <li class="list-group-item">
         <div>
-          <%= link_to 'All my Projects', projects_path %> 
+        <i class="fas fa-project-diagram"></i>
+          <%= link_to 'All My Projects', projects_path %> 
         </div>
       </li>
       <li class="list-group-item">
         <div>
-          <%= link_to 'All Projects Shared with me', second_index_path %> 
+        <i class="fas fa-unlink"></i>
+          <%= link_to 'All My External Projects', second_index_path %> 
         </div>
       </li>
       <li class="list-group-item">
         <div>
-          <%= link_to 'All my Groups', groups_path %>  
+        <i class="fas fa-layer-group"></i>
+          <%= link_to 'All My Groups', groups_path %>  
         </div>
       </li>
       <li class="list-group-item">
         <div>
-          <%= link_to 'Project tasks', tasks_path %>  
+        <i class="fas fa-tasks"></i>
+          <%= link_to 'Project Tasks', tasks_path %>  
         </div>
       </li>
       <li class="list-group-item">
         <div>
+        <i class="fas fa-cogs"></i>
           <%= link_to "Account Settings", edit_user_path(current_user) %>  
         </div>
       </li>

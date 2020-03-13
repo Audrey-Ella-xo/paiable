@@ -1,6 +1,10 @@
 <header class="navbar navbar-fixed-top">
   <div class="container">
-    <%= link_to "PAIABLE", current_user, id: "logo" %>
+
+  <%= link_to current_user do %>
+    <i class="fas fa-bars" id="logo" ></i>
+  <% end %>
+
     <div class="namer"><%= namer(yield(:name)) %></div>
     <nav>
       <ul class="nav navbar-nav navbar-right">
