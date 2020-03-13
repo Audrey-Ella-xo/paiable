@@ -4,5 +4,5 @@
 <%= render 'form', task: @task %>
 
 <div class="bttn">
-<%= button_to 'Back', current_user, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Back', request.referrer, method: :get, class: 'btn btn-primary' %>
 </div>
