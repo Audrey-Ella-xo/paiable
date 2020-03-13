@@ -1,0 +1,9 @@
+<% provide(:title, "Edit Task") %>
+<% provide(:name, "Editing Task") %>
+
+<%= render 'form', task: @task %>
+
+<div class="bttn">
+<%= button_to 'Show', @task, method: :get, class: 'btn btn-primary' %>
+</div>
+

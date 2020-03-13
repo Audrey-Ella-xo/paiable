@@ -1,0 +1,25 @@
+<% provide(:title, "Projects") %>
+<p id="notice"><%= notice %></p>
+
+<% provide(:name, "Ungrouped Projects") %>
+
+<table class="project container">
+  
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td class="pjname task"><%= link_to "#{project.name}", project %>
+          <p class="date"><%= project.created_at.strftime("%b %d, %Y") %></p>
+        </td>
+        <td class="hours task"><%=int_to_time project.worked_hours%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="bttn">
+<%= button_to 'Back', current_user, method: :get, class: 'btn btn-primary' %>
+</div>
+

@@ -1,0 +1,47 @@
+<%= form_with(model: project, local: true, class: "form-signin") do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :name, class: "sr-only" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Name" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :worked_hours, class: "sr-only" %>
+    <%= form.text_field :worked_hours, class: "form-control", placeholder: "Hours worked in minutes" %>
+  </div>
+
+  <div class="field">
+  <%= form.label :group %>
+  <% Group.all.each do |group| %>
+    <%= check_box_tag "project[group_ids][]", group.id, @project.group_ids.include?(group.id) %>
+    <%= group.name %>
+    <br />
+  <% end %>
+  </div>
+
+  <div class="field">
+  <%= form.label :Task %>  
+  <% Task.all.each do |task| %>
+    <%= check_box_tag "project[task_ids][]", task.id, @project.task_ids.include?(task.id) %>
+    <%= task.name %>
+    <br />
+  <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
+

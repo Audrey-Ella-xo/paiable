@@ -1,0 +1,48 @@
+<% provide(:title, @user.username) %>
+<p id="notice"><%= notice %></p>
+<div class="">
+  <section class="user_info">
+    <h1>
+      <span><%= image_tag @user.picture.url, class: "profile"%></span>
+      <%= @user.name %>
+      <%=  @user.lastname %>
+    </h1>
+  </section>
+
+  <div class="">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <div>
+        <i class="fas fa-project-diagram"></i>
+          <%= link_to 'All My Projects', projects_path %> 
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div>
+        <i class="fas fa-unlink"></i>
+          <%= link_to 'All My External Projects', second_index_path %> 
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div>
+        <i class="fas fa-layer-group"></i>
+          <%= link_to 'All My Groups', groups_path %>  
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div>
+        <i class="fas fa-tasks"></i>
+          <%= link_to 'Project Tasks', tasks_path %>  
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div>
+        <i class="fas fa-cogs"></i>
+          <%= link_to "Account Settings", edit_user_path(current_user) %>  
+        </div>
+      </li>
+      
+    </ul>    
+  </div>
+</div>
+

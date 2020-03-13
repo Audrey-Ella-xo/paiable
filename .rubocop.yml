@@ -1,0 +1,45 @@
+AllCops:
+  Exclude:
+    - "bin/*"
+    - "db/**/*"
+    - "config/**/*"
+    - "Guardfile"
+    - "Rakefile"
+    - "Gemfile"
+    - "config*"
+    - "node_modules/**/*"
+    - "app/channels/**/*"
+    - "app/node/**/*"
+    - "app/mailers/**/*"
+    - "app/jobs/**/*"
+    - "test/**/*"
+  DisplayCopNames: true
+
+Layout/LineLength:
+  Max: 120
+Metrics/MethodLength:
+  Include:
+    - "app/controllers/*"
+    - "app/models/*"
+  Max: 20
+Metrics/AbcSize:
+  Include:
+    - "app/controllers/*"
+    - "app/models/*"
+  Max: 50
+Metrics/ClassLength:
+  Max: 150
+Metrics/BlockLength:
+  ExcludedMethods: ['describe']
+  Max: 30
+
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Layout/ExtraSpacing:
+  AllowForAlignment: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented

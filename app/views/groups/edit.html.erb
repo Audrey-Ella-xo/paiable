@@ -1,0 +1,8 @@
+<% provide(:title, "Edit Group") %>
+<% provide(:name, "Editing Group") %>
+
+<%= render 'form', group: @group %>
+<div class="bttn">
+<%= button_to 'Show', @group, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Back', groups_path, method: :get, class: 'btn btn-primary' %>
+</div>

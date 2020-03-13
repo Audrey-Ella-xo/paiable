@@ -1,0 +1,9 @@
+<% provide(:title, "Edit User") %>
+<% provide(:name, "Editing User") %>
+
+<%= render 'form', user: @user %>
+
+<div class="bttn">
+<%= button_to 'Show', @user, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Back', request.referrer, method: :get, class: 'btn btn-primary' %>
+</div>

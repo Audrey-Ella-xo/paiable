@@ -1,0 +1,8 @@
+<% provide(:title, "Edit Project") %>
+<% provide(:name, "Editing Project") %>
+
+<%= render 'form', project: @project %>
+
+<div class="bttn">
+<%= button_to 'Back', current_user, method: :get, class: 'btn btn-primary' %>
+</div>

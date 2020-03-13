@@ -1,0 +1,38 @@
+<% provide(:title, @group.name) %>
+<p id="notice"><%= notice %></p>
+<div class="row">
+    <section class="group_info">
+      <h1>
+        <span><%= image_tag @group.icon.url if @group.icon? %></span>
+        <%= @group.name %>
+      </h1>
+    </section>
+  <div>
+
+    <table class="showcase">
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @group.projects.each do |project| %>
+        <tr>
+          <td><%= link_to project.name, project_path(project) %></td>
+          <td><%= User.find_by(id: project.author_id).name%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+
+  <div class="bttn">
+  <%= button_to 'Edit', edit_group_path(@group), method: :get, class: 'btn btn-primary' %>
+  <%= button_to 'Destroy', @group, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+  <%= button_to 'Create new Group', new_group_path, method: :get, class: 'btn btn-primary' %>
+  <%= button_to 'Back', groups_path, method: :get, class: 'btn btn-primary' %>
+  </div>
+  </div>
+</div>

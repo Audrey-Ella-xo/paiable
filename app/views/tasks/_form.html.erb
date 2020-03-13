@@ -1,0 +1,27 @@
+<%= form_with(model: task, local: true, class: "form-signin") do |form| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, class: "sr-only" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Task name" %>
+  </div>
+
+  <div class="field">
+  <%= form.label :activity, class: "sr-only" %>
+  <%= form.text_field :activity, class: "form-control", placeholder: "Activity" %>
+</div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

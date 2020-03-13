@@ -1,0 +1,52 @@
+<%= form_with(model: user, local: true, class: "form-signin") do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <span class="picture">
+      <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: "form-control", placeholder: "Upload photo" %>
+    </span>
+  </div>
+
+  <div class="field">
+    <%= form.label :username, class: "sr-only" %>
+    <%= form.text_field :username, class: "form-control", placeholder: "Username" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name, class: "sr-only" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "First name" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname, class: "sr-only" %>
+    <%= form.text_field :lastname, class: "form-control", placeholder: "Last name" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password, class: "sr-only" %>
+    <%= form.text_field :password, class: "form-control", placeholder: "Password" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('#user_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>

@@ -1,0 +1,8 @@
+<% provide(:title, "Registration") %>
+<% provide(:name, "New User") %>
+
+<%= render 'form', user: @user %>
+
+<div class="bttn">
+    <%= button_to 'Back', root_path, method: :get, class: 'btn btn-primary' %>
+</div>
