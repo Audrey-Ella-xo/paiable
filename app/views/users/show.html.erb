@@ -3,7 +3,13 @@
 <div class="">
   <section class="user_info">
     <h1>
-      <span><%= image_tag @user.picture.url, class: "profile"%></span>
+      <span>
+      <% if @user.picture? %>
+        <%= image_tag @user.picture.url, class: "profile"%>
+      <% end %>
+      
+      
+      </span>
       <%= @user.name %>
       <%=  @user.lastname %>
     </h1>
