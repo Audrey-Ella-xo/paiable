@@ -3,7 +3,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[show edit update]
   def index
-    @tasks = Task.all.order(name: :asc)
+    @tasks = Task.all.ascending
   end
 
   def new

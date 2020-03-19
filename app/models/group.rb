@@ -10,6 +10,8 @@ class Group < ApplicationRecord
   validates :icon, presence: true
   validate :icon_size
 
+  scope :ascending, -> { order(name: :asc) }
+
   private
 
   # Validates the size of an uploaded picture.

@@ -6,8 +6,8 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   mount_uploader :picture, PictureUploader
   validates :username, presence: true, length: { maximum: 12 }, uniqueness: { case_sensitive: false }
-  validates :name, presence: true
-  validates :lastname, presence: true
+  validates :name, presence: true, length: { maximum: 15 }
+  validates :lastname, presence: true, length: { maximum: 15 }
   validates :password, presence: true, length: { maximum: 6 }
   validate :picture_size
 

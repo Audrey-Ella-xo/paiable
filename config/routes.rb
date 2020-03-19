@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :groups
   resources :projects
-  resources :users
-  resources :tasks
+  resources :users, only: [:new, :show, :edit, :create, :update ]
+  resources :tasks, only: [:index, :new, :show, :edit, :create, :update ]
   root 'static_pages#landing'
   get  '/second_index', to: 'projects#second_index'
   get    '/home',   to: 'static_pages#home'

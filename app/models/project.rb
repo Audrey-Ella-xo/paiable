@@ -9,4 +9,7 @@ class Project < ApplicationRecord
   has_many :tasks, -> { distinct }, through: :taskings, dependent: :destroy
   validates :name, presence: true
   validates :worked_hours, presence: true
+
+  scope :with_grouping, -> { joins(:groupings).distinct }
+  scope :without_grouping, -> { includes(:groupings).where(groupings: { group_id: nil } )}
 end

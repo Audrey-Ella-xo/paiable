@@ -37,6 +37,16 @@ RSpec.describe User, type: :model do
       expect(subject).to_not be_valid
     end
 
+    it 'expects name to not be too long' do
+      subject.name = 'a' * 20
+      expect(subject).to_not be_valid
+    end
+
+    it 'expects lastname to not be too long' do
+      subject.lastname = 'a' * 20
+      expect(subject).to_not be_valid
+    end
+
     it 'expects password to not be too long' do
       subject.password = 'a' * 8
       expect(subject).to_not be_valid
