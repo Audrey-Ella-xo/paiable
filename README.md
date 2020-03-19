@@ -71,10 +71,9 @@ This is a Microverse capstone project of the Ruby on Rails Curriculum.
 
 ### Live Demo
 
-<<<<<<< HEAD
+
 Please visit the link bellow to view the live demo of the application
-=======
->>>>>>> origin/Development
+
 [Live Demo](https://paiable.herokuapp.com/)
 
 ### Gettiing Started
@@ -119,11 +118,7 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-<<<<<<< HEAD
 The project was deployed in [Heroku](https://paiable.herokuapp.com/) and I use aws s3 bucket to store images in production.
-=======
-The project was deployed in [Heroku](https://paiable.herokuapp.com/) and also we configured the application in Facebook for developers to sign in using Facebook accounts
->>>>>>> origin/Development
 
 ### Built With
 This project was built using these technologies.
