@@ -138,7 +138,7 @@ This project was built using these technologies.
 Audrey Emmanuella Odiaka - [@o___audrey_xo](https://twitter.com/o___audrey_xo) - [@audrey-ella-xo](https://github.com/audrey-ella-xo) - anitaudrey@gmail.com
 <br />
 
-Project Link: [https://github.com/Audrey-Ella-xo/paiable/)
+Project Link: [https://github.com/Audrey-Ella-xo/paiable]
 
 ## 🤝 Contributing
 
