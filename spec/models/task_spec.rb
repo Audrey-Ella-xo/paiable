@@ -32,4 +32,15 @@ RSpec.describe Task, type: :model do
       expect { Task.create(name: 'Chifumnanya', activity: 'Peña') }.not_to raise_error
     end
   end
+
+  context 'Associations tests' do
+    let(:user) { User.create(username: 'maria', name: 'Chifumnanya', lastname: 'Peña', password: '123456') }
+    let(:project) { Project.create(name: 'party', worked_hours: 120, author_id: user.id ) }
+    let(:task) { Task.create(name: 'party', activity: 'Activity', user_id: user.id, projects: [project]) }
+
+    it 'has many projects' do
+      expect(task.respond_to?(:projects)).to be_truthy
+      expect(task.projects).to include(project)
+    end
+  end
 end
