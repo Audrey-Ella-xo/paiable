@@ -35,11 +35,20 @@ RSpec.describe Project, type: :model do
 
   context 'Associations tests' do
     let(:user) { User.create(username: 'maria', name: 'Chifumnanya', lastname: 'Peña', password: '123456') }
-    let(:group) {Group.create(name: 'Test Group',
-                                       icon: Rack::Test::UploadedFile.new(File.open(File.join(Rails.root,
-                                                                                              '/app/assets/images/chibi.jpeg'))), user_id: user.id)}
+    let(:group) do
+      Group.create(name: 'Test Group',
+                   icon: Rack::Test::UploadedFile.new(File.open(File.join(Rails.root,
+                                                                          '/app/assets/images/chibi.jpeg'))),
+                   user_id: user.id)
+    end
     let(:task) { Task.create(name: 'party', activity: 'Activity', user_id: user.id) }
-    let(:project) { Project.create(name: 'party', worked_hours: 120, author_id: user.id, groups: [group], tasks: [task] ) }
+    let(:project) do
+      Project.create(name: 'party',
+                     worked_hours: 120,
+                     author_id: user.id,
+                     groups: [group],
+                     tasks: [task])
+    end
 
     it 'has many groups' do
       expect(project.respond_to?(:groups)).to be_truthy

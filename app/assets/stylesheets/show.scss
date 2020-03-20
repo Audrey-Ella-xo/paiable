@@ -1,0 +1,24 @@
+// Show styles
+
+.showcase {
+    border-collapse: collapse;
+    max-width: 665px;
+    margin: auto;
+    width: 100%;
+    td, th {
+      border: 1px solid #ddd;
+      padding: 8px;
+      background-color: #fff;
+    }
+  
+    tr:hover {
+      background-color: #ddd;
+    }
+    th {
+      padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #5fb523;
+    color: white;
+    }
+  }

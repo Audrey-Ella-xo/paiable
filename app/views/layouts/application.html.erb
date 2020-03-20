@@ -12,13 +12,14 @@
   <body>
     <% unless action_name == "landing" %>
       <%= render 'layouts/header' %>
+      <%= render 'layouts/sidebar' %>
     <% end %>
     
-    <div class="container">
+    <main class="container">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
       <%= yield %>
-    </div>
+    </main>
   </body>
 </html>

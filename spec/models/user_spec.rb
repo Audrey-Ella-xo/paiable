@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'Validation tests' do
+  context 'Validations' do
     subject { User.new }
 
     it 'valid with valid attributes' do
@@ -31,6 +31,10 @@ RSpec.describe User, type: :model do
     it 'creates a user' do
       expect { User.create(name: 'Chifumnanya', lastname: 'Peña') }.not_to raise_error
     end
+  end
+
+  context 'Length validations' do
+    subject { User.new }
 
     it 'expects username to not be too long' do
       subject.username = 'a' * 15
@@ -53,7 +57,12 @@ RSpec.describe User, type: :model do
     end
 
     it 'creates a user' do
-      expect { User.create(username: 'maria', name: 'Chifumnanya', lastname: 'Peña', password: '123456') }.not_to raise_error
+      expect do
+        User.create(username: 'maria',
+                    name: 'Chifumnanya',
+                    lastname: 'Peña',
+                    password: '123456')
+      end .not_to raise_error
     end
 
     it 'adds a new user' do
@@ -65,9 +74,12 @@ RSpec.describe User, type: :model do
 
   context 'Associations tests' do
     let(:user) { User.create(username: 'maria', name: 'Chifumnanya', lastname: 'Peña', password: '123456') }
-    let(:group) {Group.create(name: 'Test Group',
-                                       icon: Rack::Test::UploadedFile.new(File.open(File.join(Rails.root,
-                                                                                              '/app/assets/images/chibi.jpeg'))), user_id: user.id)}
+    let(:group) do
+      Group.create(name: 'Test Group',
+                   icon: Rack::Test::UploadedFile.new(File.open(File.join(Rails.root,
+                                                                          '/app/assets/images/chibi.jpeg'))),
+                   user_id: user.id)
+    end
     let(:project) { Project.create(name: 'party', worked_hours: 120, author_id: user.id) }
     let(:task) { Task.create(name: 'party', activity: 'Activity', user_id: user.id) }
 
