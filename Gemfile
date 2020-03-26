@@ -44,6 +44,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 end

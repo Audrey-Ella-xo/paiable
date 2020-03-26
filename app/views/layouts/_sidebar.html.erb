@@ -1,0 +1,58 @@
+<% if logged_in? %>
+<aside class="side-bar">
+    <div class="user_info">
+      <h1 class="logo"> paiable </h2>
+
+      <% if current_user.picture? %>
+      <%= image_tag current_user.picture.url, class: "profile"%>
+      <% else %>
+      <%=image_tag("avatar-icon.png", class: "profile")%>
+      <% end %>
+		  
+      <h2><%= current_user.name %>
+      <%= current_user.lastname %></h2>
+    </div>
+
+    <nav class="nav-bar">
+    <ul>
+    <li>
+      <div>
+      <i class="fas fa-project-diagram"></i>
+        <%= link_to 'All My Projects', projects_path %> 
+      </div>
+    </li>
+    <li >
+      <div>
+      <i class="fas fa-unlink"></i>
+        <%= link_to 'All My External Projects', second_index_path %> 
+      </div>
+    </li>
+    <li >
+      <div>
+      <i class="fas fa-layer-group"></i>
+        <%= link_to 'All My Groups', groups_path %>  
+      </div>
+    </li>
+    <li >
+      <div>
+      <i class="fas fa-tasks"></i>
+        <%= link_to 'Project Tasks', tasks_path %>  
+      </div>
+    </li>
+    <li >
+      <div>
+      <i class="fas fa-cogs"></i>
+        <%= link_to "Account Settings", edit_user_path(current_user) %>  
+      </div>
+    </li>
+    <li >
+      <div>
+      <i class="fas fa-sign-out-alt"></i>
+        <%= link_to "Log out", log_out_path, method: :delete %>
+      </div>
+    </li>
+    
+  </ul>  
+    </nav>
+</aside>
+<% end %>

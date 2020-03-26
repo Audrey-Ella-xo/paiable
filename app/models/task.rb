@@ -8,4 +8,6 @@ class Task < ApplicationRecord
   before_save { self.name = name.humanize }
   validates :name, presence: true, case_sensitive: false
   validates :activity, presence: true
+
+  scope :ascending, -> { order(name: :asc) }
 end

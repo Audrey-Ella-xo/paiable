@@ -1,22 +1,7 @@
+<% if logged_in? %>
 <header class="navbar navbar-fixed-top">
   <div class="container">
-
-  <%= link_to current_user do %>
-    <i class="fas fa-bars" id="logo" ></i>
-  <% end %>
-
     <div class="namer"><%= namer(yield(:name)) %></div>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-            <% if logged_in? %>
-              <li>
-                <%= link_to "Log out", log_out_path, method: :delete %>
-              </li>
-        <% else %>
-          <li><%= link_to "Log in", log_in_path %></li>
-        <% end %>
-        
-      </ul>
-    </nav>
   </div>
 </header>
+<% end %>

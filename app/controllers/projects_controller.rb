@@ -3,11 +3,11 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   def index
-    @projects = current_user.projects.joins(:groupings).distinct
+    @projects = current_user.projects.with_grouping
   end
 
   def second_index
-    @projects = current_user.projects.includes(:groupings).where(groupings: { group_id: nil })
+    @projects = current_user.projects.without_grouping
   end
 
   def new

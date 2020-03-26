@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username].downcase)
     if user
       log_in user
-      redirect_to user
+      redirect_to projects_path
     else
       flash.now[:danger] = 'Username not found'
       render 'new'
