@@ -132,6 +132,10 @@ This project was built using these technologies.
 * VsCode
 * Bootstrap
 
+### Potential Future Features
+* Add group project sharing activites
+* Add user interactions for group members
+
 <!-- CONTACT -->
 ## Authors
 
