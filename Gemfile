@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 
 gem "bootstrap-sass", ">= 3.4.1"
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,7 +36,7 @@ gem 'font-awesome-sass'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
-gem 'carrierwave',             '~> 1.2.2'
+gem 'carrierwave',             '~> 1.3.2'
 gem "mini_magick", ">= 4.9.4"
 
 group :development, :test do
