@@ -62,7 +62,7 @@ RSpec.describe User, type: :model do
                     name: 'Chifumnanya',
                     lastname: 'Peña',
                     password: '123456')
-      end .not_to raise_error
+      end.not_to raise_error
     end
 
     it 'adds a new user' do
