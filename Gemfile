@@ -36,7 +36,7 @@ gem 'font-awesome-sass', '~> 6.5.2'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
-gem 'carrierwave',             '~> 1.3.2'
+gem 'carrierwave',             '~> 2.2.6'
 gem "mini_magick", ">= 4.9.4"
 
 group :development, :test do
