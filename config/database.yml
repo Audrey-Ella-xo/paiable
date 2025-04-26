@@ -21,7 +21,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: paiable_production
-  username: paiable
-  password: <%= ENV['PAIABLE_DATABASE_PASSWORD'] %>
+  # <<: *default
+  # database: paiable_production
+  # username: paiable
+  # password: <%= ENV['PAIABLE_DATABASE_PASSWORD'] %>s
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV['DATABASE_URL'] %>
